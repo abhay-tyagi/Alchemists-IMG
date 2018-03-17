@@ -22,7 +22,8 @@ def index(request):
 
 		vids = '/media/' + str(vvid.image)
 
-		picname = os.path.join(settings.BASE_DIR, "IMGfilter/vids/");
+		vidss = 'IMGfilter/' + vids
+		picname = os.path.join(settings.BASE_DIR, vidss);
 
 		os.system("sudo python2 Website/utilities/pred.py " + picname)
 
