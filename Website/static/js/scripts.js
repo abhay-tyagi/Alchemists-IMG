@@ -25,7 +25,7 @@ function filter(fil)
   else if(fil=='7')
     name='hudson';
   else if(fil=='8')
-    name='inkwell';
+    name='juno';
   else if(fil=='9')
     name='lofi';
   else if(fil=='10')
@@ -37,7 +37,7 @@ function filter(fil)
   else if(fil=='13')
     name='slumber';
   else if(fil=='14')
-    name='poprocket';
+    name='vesper';
   else if(fil=='15')
     name='rise';
   else if(fil=='16')

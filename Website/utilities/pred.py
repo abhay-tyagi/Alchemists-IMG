@@ -9,7 +9,13 @@ import sys
 print(os.system("pwd"))
 classifier = load_model('newest')
 
+#from keras.preprocessing.image import ImageDataGenerator
+
 test_image = image.load_img(sys.argv[1], target_size = (64, 64))
+#test_datagen = ImageDataGenerator(rescale = 1./255)
+
+#test_set = test_datagen.flow_from_directory('
+
 test_image = image.img_to_array(test_image)
 test_image = np.expand_dims(test_image, axis = 0)
 result = classifier.predict(test_image)
