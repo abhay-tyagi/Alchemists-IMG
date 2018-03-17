@@ -22,18 +22,23 @@ def index(request):
 
 		vids = '/media/' + str(vvid.image)
 
-		picname = "/home/mozart/Alchemists-IMG/IMGfilter" + vids
+		picname = os.path.join(settings.BASE_DIR, "IMGfilter/vids/");
 
 		os.system("sudo python2 Website/utilities/pred.py " + picname)
 
-		with open("/home/mozart/Alchemists-IMG/f.txt", 'r') as f:
+		with open(os.path.join(settings.BASE_DIR, "f.txt"), 'r') as f:
 			num = f.read()
 
-#		num = pred.fn(picname)
+		num = num[1:]
+		num = num[0:len(num)-1]
 
+		num = num.split(',')
+
+#		num = pred.fn(picname)
+		# num = list(num)
 		print(num)
 
-		return render(request, 'Website/index.html', {'form': form, 'vid': myfile, 'resu': vids, 'fil1': num[0], 'fil2': num[1], 'fil3': num[2]})
+		return render(request, 'Website/index.html', {'form': form, 'vid': myfile, 'resu': vids, 'fil1': int(num[0]), 'fil2': int(num[1]), 'fil3': int(num[2])})
 
 	else:
 		return render(request, 'Website/index.html', {'form': form})
