@@ -6,8 +6,57 @@ function implement_fullpage()
 		});
 }
 
-function filter(name)
+function filter(fil)
 {
+  if(fil=='0')
+    name='1977';
+  else if(fil=='1')
+    name='amaro';
+  else if(fil=='2')
+    name='aden';
+  else if(fil=='3')
+    name='brannan';
+  else if(fil=='4')
+    name='earlybird';
+  else if(fil=='5')
+    name='dogpatch';
+  else if(fil=='6')
+    name='hefe';
+  else if(fil=='7')
+    name='hudson';
+  else if(fil=='8')
+    name='inkwell';
+  else if(fil=='9')
+    name='lofi';
+  else if(fil=='10')
+    name='ludwig';
+  else if(fil=='11')
+    name='mayfair';
+  else if(fil=='12')
+    name='nashville';
+  else if(fil=='13')
+    name='slumber';
+  else if(fil=='14')
+    name='poprocket';
+  else if(fil=='15')
+    name='rise';
+  else if(fil=='16')
+    name='sierra';
+  else if(fil=='17')
+    name='sutro';
+  else if(fil=='18')
+    name='toaster';
+  else if(fil=='19')
+    name='valencia';
+  else if(fil=='20')
+    name='walden';
+  else if(fil=='21')
+    name='willow';
+  else if(fil=='22')
+    name='xpro-ii';
+  else
+    alert("Filter Error!");
+
   $('#pic').removeClass();
   $('#pic').addClass('filter-'+name);
 }
