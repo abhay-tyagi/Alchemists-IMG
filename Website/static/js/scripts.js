@@ -59,6 +59,7 @@ function filter(fil)
 
   $('#pic').removeClass();
   $('#pic').addClass('filter-'+name);
+  $('#fil_name').html('<font color="white"><h4>'+name+'</h4></font>');
 }
 
 $(document).ready(function() {
