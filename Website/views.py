@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .forms import ImageForm
-from .models import Image
+from .models import Image, Filters
 from django.conf import settings
 from django.http import HttpResponseRedirect
 
@@ -35,11 +35,14 @@ def index(request):
 
 		num = num.split(',')
 
+		fil = []
+		for n in num:
+			fil.append(Filters.objects.get(number=int(n)))
 #		num = pred.fn(picname)
 		# num = list(num)
-		print(num)
+		print(fil)
 
-		return render(request, 'Website/index.html', {'form': form, 'vid': myfile, 'resu': vids, 'fil1': int(num[0]), 'fil2': int(num[1]), 'fil3': int(num[2])})
+		return render(request, 'Website/index.html', {'form': form, 'vid': myfile, 'resu': vids, 'fil1': fil[0], 'fil2': fil[1], 'fil3': fil[2]})
 
 	else:
 		return render(request, 'Website/index.html', {'form': form})
