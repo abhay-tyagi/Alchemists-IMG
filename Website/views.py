@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .forms import ImageForm
 from .models import Image, Filters
 from django.conf import settings
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 
 #from .utilities import pred
 import os

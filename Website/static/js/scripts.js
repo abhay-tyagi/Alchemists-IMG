@@ -6,7 +6,7 @@ function implement_fullpage()
 		});
 }
 
-function filter(fil, likes)
+function filter(fil, likes, tag)
 {
   if(fil=='0')
     name='1977';
@@ -61,12 +61,26 @@ function filter(fil, likes)
   $('#pic').addClass('filter-'+name);
   $('#fil_name').html('<font color="white"><h4>'+name+'</h4></font>');
   $('#like_no').text(likes);
+  $('#filbtn_1').hide();
+  $('#filbtn_2').hide();
+  $('#filbtn_3').hide();
+  $('#'+tag).show();
+}
+
+function addlike(name, taglike, tagclass)
+{
+  $('#'+taglike).load('/addlike/'+name);
+  $('#'+tagclass).addClass('disabled');
 }
 
 $(document).ready(function() {
 	implement_fullpage();
 	// cust_controls();
 	$('.progress').hide();
+  $('#filbtn_1').hide();
+  $('#filbtn_2').hide();
+  $('#filbtn_3').hide();
+
 });
 
 function progress_bar()

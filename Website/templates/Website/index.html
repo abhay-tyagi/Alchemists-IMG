@@ -57,13 +57,13 @@
 					<div class="ui three column center aligned grid">
 						<div class="row">
 							<div class="column">
-								<button type="submit" class="btn btn-success" onclick="filter('{{fil1.number}}', {{fil1.likes}})">Apply Filter 1</button>
+								<button type="submit" class="btn btn-success" onclick="filter('{{fil1.number}}', {{fil1.likes}}, 'filbtn_1')">Apply Filter 1</button>
 							</div>
 							<div class="column">
-								<button type="submit" class="btn btn-success" onclick="filter('{{fil2.number}}', {{fil2.likes}})">Apply Filter 2</button>
+								<button type="submit" class="btn btn-success" onclick="filter('{{fil2.number}}', {{fil2.likes}}, 'filbtn_2')">Apply Filter 2</button>
 							</div>
 							<div class="column">
-								<button type="submit" class="btn btn-success" onclick="filter('{{fil3.number}}', {{fil3.likes}})">Apply Filter 3</button>
+								<button type="submit" class="btn btn-success" onclick="filter('{{fil3.number}}', {{fil3.likes}}, 'filbtn_3')">Apply Filter 3</button>
 							</div>
 						</div>
 					</div>
@@ -85,12 +85,28 @@
 									</figure>
 									<div class="ui two column center aligned grid">
 									<div class="column">
-										<div id="love-btn" class="mini labeled button" tabindex="0">
-										  <div class="mini ui red button">
+										<div id="filbtn_1" class="mini labeled button" tabindex="0">
+										  <button id="love_btn1" class="mini ui red button" onclick="addlike('{{fil1.name}}', 'like_no1', 'love_btn1')">
 										    <i class="heart icon"></i> Like
-										  </div>
+										  </button>
 										  <a class="ui basic red left pointing label">
-										    <div id="like_no">loading..</div>
+										    <div id="like_no1">{{fil1.likes}}</div>
+										  </a>
+										</div>
+										<div id="filbtn_2" class="mini labeled button" tabindex="0">
+										  <button id="love_btn2" class="mini ui red button" onclick="addlike('{{fil2.name}}', 'like_no2', 'love_btn2')">
+										    <i class="heart icon"></i> Like
+										  </button>
+										  <a class="ui basic red left pointing label">
+										    <div id="like_no2">{{fil2.likes}}</div>
+										  </a>
+										</div>
+										<div id="filbtn_3" class="mini labeled button" tabindex="0">
+										  <button id="love_btn3" class="mini ui red button" onclick="addlike('{{fil3.name}}', 'like_no3', 'love_btn3')">
+										    <i class="heart icon"></i> Like
+										  </button>
+										  <a class="ui basic red left pointing label">
+										    <div id="like_no3">{{fil3.likes}}</div>
 										  </a>
 										</div>
 									</div>
