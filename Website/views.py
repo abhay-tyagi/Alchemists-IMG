@@ -54,4 +54,5 @@ def addlike(request, name):
 	fil.likes += 1
 	fil.save()
 
-	return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+	return HttpResponse(fil.likes)
+#	return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
