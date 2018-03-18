@@ -61,9 +61,9 @@ function filter(fil, likes, tag, rec)
 
   $('#pic').removeClass();
   $('#pic').addClass('filter-'+name);
- // if(rec==fil)
-  //  $('#fil_name').html('<font color="white"><h4>'+name+'</h4></font><font color="green"><h3>Trending</h3></font>');
-//  else
+  if(rec==fil)
+   $('#fil_name').html('<font color="green"><h3>Trending</h3></font><font color="white"><h4>'+name+'</h4></font>');
+  else
     $('#fil_name').html('<font color="white"><h4>'+name+'</h4></font>');
   $('#like_no').text(likes);
   $('#filbtn_1').hide();
