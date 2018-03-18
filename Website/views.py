@@ -42,7 +42,14 @@ def index(request):
 		# num = list(num)
 		print(fil)
 
-		return render(request, 'Website/index.html', {'form': form, 'vid': myfile, 'resu': vids, 'fil1': fil[0], 'fil2': fil[1], 'fil3': fil[2]})
+		max = fil[0].likes
+		recc = fil[0].number
+		for f in fil:
+			if f.likes > max:
+				max = f.likes
+				recc = f.number
+
+		return render(request, 'Website/index.html', {'form': form, 'vid': myfile, 'resu': vids, 'fil1': fil[0], 'fil2': fil[1], 'fil3': fil[2], 'recc': recc})
 
 	else:
 		return render(request, 'Website/index.html', {'form': form})

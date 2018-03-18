@@ -6,7 +6,7 @@ function implement_fullpage()
 		});
 }
 
-function filter(fil, likes, tag)
+function filter(fil, likes, tag, rec)
 {
   if(fil=='0')
     name='1977';
@@ -57,9 +57,14 @@ function filter(fil, likes, tag)
   else
     alert("Filter Error!");
 
+  
+
   $('#pic').removeClass();
   $('#pic').addClass('filter-'+name);
-  $('#fil_name').html('<font color="white"><h4>'+name+'</h4></font>');
+ // if(rec==fil)
+  //  $('#fil_name').html('<font color="white"><h4>'+name+'</h4></font><font color="green"><h3>Trending</h3></font>');
+//  else
+    $('#fil_name').html('<font color="white"><h4>'+name+'</h4></font>');
   $('#like_no').text(likes);
   $('#filbtn_1').hide();
   $('#filbtn_2').hide();
