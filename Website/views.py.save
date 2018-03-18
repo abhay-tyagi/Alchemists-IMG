@@ -1,0 +1,60 @@
+from django.shortcuts import render
+from .forms import ImageForm
+from .models import Image
+from django.conf import settings
+from django.http import HttpResponseRedirect
+
+
+#from .utilities import pred
+import os
+
+# Create your views here.
+def index(request):
+	form = ImageForm()
+
+	if request.method == 'POST':
+
+		root = settings.MEDIA_ROOT
+		myfile = request.FILES['myfile']
+
+		vvid = Image()
+		vvid.image = myfile
+		vvid.save()
+
+		vids = '/media/' + str(vvid.image)
+
+		picname = "/home/mozart/Alchemists-IMG/IMGfilter" + vids
+
+		os.system("sudo python2 Website/utilities/pred.py " + picname)
+
+read()
+#		num = pred.fn(picname)
+
+		print(num)
+
+		if myfile:
+			return render(request, 'Website/index.html', {'form': form, 'vid': myfile, 'resu': vids, 'fil': num})
+=======
+=======
+>>>>>>> c03188dc0ff313c8c51158003f12d9642ce18a87
+		
+		vvid = Image()
+		vvid.image = myfile
+		vvid.save()
+ 
+		vids = '/media/' + str(vvid.image)
+
+		if myfile:
+			return render(request, 'Website/index.html', {'form': form, 'vid': myfile, 'resu': vids})
+
+		else:
+			return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+	else:
+		vid = Image.objects.all()
+		#print vid
+		vid.delete()
+		vid = None
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+		return render(re
