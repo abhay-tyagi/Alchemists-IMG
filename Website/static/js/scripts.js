@@ -1,12 +1,12 @@
 function implement_fullpage()
 {
 	$('#fullpage').fullpage({
-			anchors: ['home', 'app'],
-			sectionsColor: ['#000000', '#000000'],
+			anchors: ['home', 'caption', 'app'],
+			sectionsColor: ['#000000', '#000000', '#000000'],
 		});
 }
 
-function filter(fil)
+function filter(fil, likes)
 {
   if(fil=='0')
     name='1977';
@@ -60,6 +60,7 @@ function filter(fil)
   $('#pic').removeClass();
   $('#pic').addClass('filter-'+name);
   $('#fil_name').html('<font color="white"><h4>'+name+'</h4></font>');
+  $('#like_no').text(likes);
 }
 
 $(document).ready(function() {

@@ -18,6 +18,11 @@
 </script>
 
 <div id="fullpage">
+	<div class="section">
+		<div class="ui center aligned container" align="center">
+		<img src="{% static 'img/logo.png' %}">
+		</div>
+	</div>
 	<div class='section'>
 		<div class='ui center aligned container' style='color:white;'>
 			<div class='panel panel-primary' style='text-align:center;'>
@@ -52,13 +57,13 @@
 					<div class="ui three column center aligned grid">
 						<div class="row">
 							<div class="column">
-								<button type="submit" class="btn btn-success" onclick="filter('{{fil1}}')">Apply Filter 1</button>
+								<button type="submit" class="btn btn-success" onclick="filter('{{fil1.number}}', {{fil1.likes}})">Apply Filter 1</button>
 							</div>
 							<div class="column">
-								<button type="submit" class="btn btn-success" onclick="filter('{{fil2}}')">Apply Filter 2</button>
+								<button type="submit" class="btn btn-success" onclick="filter('{{fil2.number}}', {{fil2.likes}})">Apply Filter 2</button>
 							</div>
 							<div class="column">
-								<button type="submit" class="btn btn-success" onclick="filter('{{fil3}}')">Apply Filter 3</button>
+								<button type="submit" class="btn btn-success" onclick="filter('{{fil3.number}}', {{fil3.likes}})">Apply Filter 3</button>
 							</div>
 						</div>
 					</div>
@@ -67,17 +72,32 @@
 						<div class="row">
 							<div class="column">
 								<div class="ui centered image">
-									<font color="white"><h5>Original</h5></font>
+									<font color="white"><h5>Original</h5></font><br>
 									<img style='max-height:400px;' src="{{ resu }}">
 								</div>
 							</div>
 							<div class="column">
 								<div class="ui centered image">
-									<div onclick="review()" id="fil_name"></div>
-									<font color="white"><h5>Generated&nbsp;&nbsp;<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div></h5></font>
+									<div id="fil_name"></div>
+									<font color="white"><h5>Generated</h5></font>
 									<figure id="pic" class="">
 										<img src="{{ resu }}" style='max-height:400px;'>
 									</figure>
+									<div class="ui two column center aligned grid">
+									<div class="column">
+										<div id="love-btn" class="mini labeled button" tabindex="0">
+										  <div class="mini ui red button">
+										    <i class="heart icon"></i> Like
+										  </div>
+										  <a class="ui basic red left pointing label">
+										    <div id="like_no">loading..</div>
+										  </a>
+										</div>
+									</div>
+									<div class="column">
+										<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+									</div>
+									</div>
 								</div>
 							</div>
 						</div>
