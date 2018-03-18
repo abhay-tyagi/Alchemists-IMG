@@ -46,3 +46,12 @@ def index(request):
 
 	else:
 		return render(request, 'Website/index.html', {'form': form})
+
+
+def addlike(request, name):
+	fil = Filters.objects.get(name=name)
+
+	fil.likes += 1
+	fil.save()
+
+	return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
