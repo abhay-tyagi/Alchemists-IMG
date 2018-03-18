@@ -11,10 +11,5 @@ class Image(models.Model):
 		return str(self.pk)
 
 class Filters(models.Model):
-	name = models.CharField(max_length=100)
-	number = models.IntegerField()
-	likes = models.IntegerField()
-
-	def __str__(self):
-		return str(self.name)
-
+	name = models.CharField(max_length=50)
+	coun
